@@ -68,6 +68,12 @@ scrape_configs:
 
 ### 3 : Remonter les métrique du CPU et de l'espace disque utilisé
 
+**Métrique du CPU**
+
+**Métrique de l'espace disque utilisé (en %)**
+```
+100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)
+```
 
 
 ## Nagios
