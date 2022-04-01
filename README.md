@@ -274,9 +274,9 @@ define command {
 }
 ```
 
-**- **Création du fichier de configuration [serveur_nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/serveur_nagios.cfg)**
+**Création du fichier de configuration [serveur_nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/serveur_nagios.cfg)**
 
-**- **Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)**
+**Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)**
 
 ```
 cfg_file=/usr/local/nagios/etc/objects/serveur_nagios.cfg
@@ -298,15 +298,16 @@ La procédure suivante a été suivi afin d'installer NRPE sur le client
 
 #### Coté Serveur
 
-- Création du fichier de configuration [linux-client.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/linux-client.cfg)
+**Création du fichier de configuration [linux-client.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/linux-client.cfg)**
 
-- Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)
+**Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)**
+
 ```
 cfg_file=/usr/local/nagios/etc/objects/linux-client.cfg
 ```
 
-- Vérification sur l'interface web
+**Vérification sur l'interface web**
 ![Hotes](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/HostsBonus.png)
 ![Services](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/ServicesBonus.png)
 
-On peut voir qu'un nouvel hote est apparu (linux-client) et que plusieurs services sont associés à celui-ci
+*On peut voir qu'un nouvel hote est apparu (linux-client) et que plusieurs services sont associés à celui-ci*
