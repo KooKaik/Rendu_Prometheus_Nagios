@@ -69,6 +69,10 @@ scrape_configs:
 ### 3 : Remonter les métrique du CPU et de l'espace disque utilisé
 
 **Métrique du CPU**
+```
+100 - (avg by (instance) (irate(node_cpu_seconds_total[5m])) * 100)
+```
+![PercentageCPU](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/PercentageCPU.png)
 
 **Métrique de l'espace disque utilisé (en %)**
 ```
