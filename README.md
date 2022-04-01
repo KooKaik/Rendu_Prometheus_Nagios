@@ -53,6 +53,15 @@ HTTP OK: HTTP/1.1 200 OK - 1251 octets en 0,001 secondes de temps de réponse |t
 
 ### 7 : Supervisez son serveur nagios en créant un fichier "serveur_nagios.cfg"
 
+- Création de la commande dans [commands.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/commands.cfg)
+```
+define command {
+
+    command_name    check-http-webinterface
+    command_line    $USER1$/check_http -H $HOSTADDRESS$ -w $ARG1$ -c $ARG2$ -u $ARG3$ -a $ARG4$ -p 80
+}
+```
+
 - Création du fichier de configuration [serveur_nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/serveur_nagios.cfg)
 
 - Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)
