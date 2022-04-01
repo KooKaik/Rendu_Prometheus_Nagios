@@ -43,7 +43,7 @@ prometheus:
 ```
 
 **Ajout data source sur Grafana**
-![DataSource](LIEN)
+![DataSource](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/DataSourceGrafana.png)
 
 ### 2 : Créer un node exporter de la machine
 
@@ -57,7 +57,7 @@ prometheus:
       - hosts
 ```
 
-Ajout de node-exporter dans [prometheus.yml](LIEN)
+Ajout de node-exporter dans [prometheus.yml](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Fichier%20de%20Configuration/prometheus/prometheus.yml)
 ```
 scrape_configs:
 
