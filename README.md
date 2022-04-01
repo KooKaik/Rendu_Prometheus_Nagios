@@ -8,6 +8,68 @@
 ---
 ## Prometheus & Grafana
 
+### 1 : Installer Prometheus & Grafana
+
+
+**Container Prometheus**
+````
+prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - ./prometheus/data:/var/lib/prometheus
+    command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml
+    networks:
+      - hosts
+````
+
+**Container Grafana**
+```
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana:/var/lib/grafana
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+    environment:
+      - GF_PATHS_CONFIG=/etc/grafana/grafana.ini
+    depends_on:
+      - prometheus
+    networks:
+      - hosts
+```
+
+**Ajout data source sur Grafana**
+![DataSource](LIEN)
+
+### 2 : Créer un node exporter de la machine
+
+**Container Node Exporter**
+```
+  node-exporter:
+    image: prom/node-exporter
+    ports:
+      - 9100:9100
+    networks:
+      - hosts
+```
+
+Ajout de node-exporter dans [prometheus.yml](LIEN)
+```
+scrape_configs:
+
+  - job_name: 'node-exporter' 
+    static_configs: 
+      - targets: ['node-exporter:9100']
+```
+
+### 3 : Remonter les métrique du CPU et de l'espace disque utilisé
+
+
+
 ## Nagios
 
 ### 1 & 2 : Installez Nagios et les plugins
@@ -93,7 +155,7 @@ cfg_file=/usr/local/nagios/etc/objects/linux-client.cfg
 ```
 
 - Vérification sur l'interface web
-![Hotes](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/Hosts-Bonus.png)
-![Services](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/Services-Bonus.png)
+![Hotes](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/HostsBonus.png)
+![Services](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/ServicesBonus.png)
 
 On peut voir qu'un nouvel hote est apparu (linux-client) et que plusieurs services sont associés à celui-ci
