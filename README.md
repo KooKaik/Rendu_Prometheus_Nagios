@@ -42,7 +42,6 @@ PING CRITICAL -  Paquets perdus = 100%|rta=20.000000ms;10.000000;20.000000;0.000
 
 ### 6 : check_http sur le serveur Nagios
 
-- Test de la commande 
 ```
 cd /usr/local/nagios/libexec/
 ```
@@ -50,22 +49,6 @@ cd /usr/local/nagios/libexec/
 ```
 ./check_http -H 192.168.116.134 -w 1 -c 2 -u /nagios/ -a nagiosadmin:password -p 80
 HTTP OK: HTTP/1.1 200 OK - 1251 octets en 0,001 secondes de temps de réponse |time=0,000727s;1,000000;2,000000;0,000000 size=1251B;;;0
-```
-
-- Création de la commande dans [commands.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/commands.cfg)
-```
-define command {
-
-    command_name    check-http-webinterface
-    command_line    $USER1$/check_http -H $HOSTADDRESS$ -w $ARG1$ -c $ARG2$ -u $ARG3$ -a $ARG4$ -p 80
-}
-```
-
-- Création du fichier de configuration [webinterface.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/webinterface.cfg)
-
-- Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)
-```
-cfg_file=/usr/local/nagios/etc/objects/webinterface.cfg
 ```
 
 ### 7 : Supervisez son serveur nagios en créant un fichier "serveur_nagios.cfg"
