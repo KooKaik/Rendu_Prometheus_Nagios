@@ -67,7 +67,7 @@ scrape_configs:
 ```
 ![TargetNodeExporter](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/TargetNodeExporter.png)
 
-### 3 : Remonter les métrique du CPU et de l'espace disque utilisé
+### 3 - 4 : Remonter les métrique du CPU et de l'espace disque utilisé
 
 **Métrique du CPU (en %)**
 ```
@@ -209,9 +209,23 @@ scrape_configs:
 
 ### 1 & 2 : Installez Nagios et les plugins
 
-Nagios Core a été installé sur un serveur Ubuntu 20.04
+**Nagios Core a été installé sur un serveur Ubuntu 20.04**
 
 ![Voir l'interface web](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/NagiosCore.png)
+
+### 3 : Définir des alias
+
+**Alias pour la commande check_ping**
+
+```
+alias nping='/usr/local/nagios/libexec/check_ping'
+```
+
+**Alias pour la commande check_http**
+
+```
+alias nhttp='/usr/local/nagios/libexec/check_http'
+```
 
 ### 4 : check_ping local avec Warning à 20ms et Critical à 30% :
 
@@ -220,7 +234,7 @@ cd /usr/local/nagios/libexec/
 ```
 
 ```
-./check_ping -H 192.168.116.129 -w 20,20% -c 30,30%
+./check_ping -H 192.168.116.134 -w 20,20% -c 30,30%
 PING OK -  Paquets perdus = 0%, RTA = 0.03 ms|rta=0.025000ms;20.000000;30.000000;0.000000 pl=0%;20;30;0
 ```
 
@@ -250,7 +264,8 @@ HTTP OK: HTTP/1.1 200 OK - 1251 octets en 0,001 secondes de temps de réponse |t
 
 ### 7 : Supervisez son serveur nagios en créant un fichier "serveur_nagios.cfg"
 
-- Création de la commande dans [commands.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/commands.cfg)
+**Création de la commande dans [commands.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/commands.cfg)**
+
 ```
 define command {
 
@@ -259,9 +274,10 @@ define command {
 }
 ```
 
-- Création du fichier de configuration [serveur_nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/serveur_nagios.cfg)
+**- **Création du fichier de configuration [serveur_nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/serveur_nagios.cfg)**
 
-- Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)
+**- **Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)**
+
 ```
 cfg_file=/usr/local/nagios/etc/objects/serveur_nagios.cfg
 ```
