@@ -68,7 +68,7 @@ scrape_configs:
 
 ### 3 : Remonter les métrique du CPU et de l'espace disque utilisé
 
-**Métrique du CPU**
+**Métrique du CPU (en %)**
 ```
 100 - (avg by (instance) (irate(node_cpu_seconds_total[5m])) * 100)
 ```
