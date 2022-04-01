@@ -84,14 +84,17 @@ scrape_configs:
 ### 5 : Importer un template Gafana + Configuration dashboard
 
 **Ajout d'un dashboard (ID = 1860)**
+
 ![DashboardGrafana](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/DashboardGrafana.png)
 
 **Ajout temps de refresh 20s**
+
 Se rendre dans les paramètre du dashboard
 
 ![AutoRefresh](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/AutoRefresh.png)
 
 **Aperçu du dashboard**
+
 ![DashboardExample](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/DashboardExample.png)
 
 ### 6 : Mettre en place un serveur de stockage NextCloud
