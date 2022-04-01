@@ -74,6 +74,7 @@ scrape_configs:
 ```
 100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)
 ```
+![PercentageDisk](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/PercentageDisk.png)
 
 
 ## Nagios
