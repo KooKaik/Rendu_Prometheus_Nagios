@@ -80,6 +80,55 @@ scrape_configs:
 ```
 ![PercentageDisk](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/PercentageDisk.png)
 
+### 6 : Mettre en place un serveur de stockage NextCloud
+
+**Container MariaDB (Base de données)**
+```
+  nextcloud_db:
+    image: mariadb:latest
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    volumes:
+      - ./nextcloud/database:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=$NEXTCLOUD_MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE=$NEXTCLOUD_MYSQL_DATABASE
+      - MYSQL_USER=$NEXTCLOUD_MYSQL_USER
+      - MYSQL_PASSWORD=$NEXTCLOUD_MYSQL_PASSWORD
+    networks:
+      - hosts
+```
+
+**Container NextCloud**
+```
+  nextcloud_app:
+    image: nextcloud:latest
+    restart: always
+    ports:
+      - 8080:80
+    links:
+      - nextcloud_db
+    volumes:
+      - ./nextcloud/data:/var/www/html
+    environment:
+      - MYSQL_HOST=nextcloud_db
+      - MYSQL_DATABASE=$NEXTCLOUD_MYSQL_DATABASE
+      - MYSQL_USER=$NEXTCLOUD_MYSQL_USER
+      - MYSQL_PASSWORD=$NEXTCLOUD_MYSQL_PASSWORD
+    networks:
+      - hosts
+```
+
+**Fichier [.env](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Fichier%20de%20Configuration/.env) pour les variables d'environnement**
+```
+NEXTCLOUD_MYSQL_DATABASE=nextcloud
+NEXTCLOUD_MYSQL_USER=nextcloud
+NEXTCLOUD_MYSQL_ROOT_PASSWORD=root_mysql_password
+NEXTCLOUD_MYSQL_PASSWORD=nextcloud_password
+```
+
+**Interface NextCloud**
+![WebInterfaceNextCloud](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/WebInterfaceNextCloud.png)
 
 ## Nagios
 

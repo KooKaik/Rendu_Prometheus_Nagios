@@ -1,0 +1,8 @@
+{ "translations": {
+    "Home" : "Baş sahypa",
+    "Today" : "Şu gün",
+    "Yesterday" : "Düýn",
+    "Hello %s" : "Salam%s",
+    "Settings" : "Sazlamalar"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

@@ -1,0 +1,10 @@
+{ "translations": {
+    "Logging" : "Registos",
+    "Copy" : "Copiar",
+    "Level" : "Nível",
+    "App" : "Aplicação",
+    "Message" : "Mensagem",
+    "Time" : "Tempo",
+    "Download logs" : "Transferir registos"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

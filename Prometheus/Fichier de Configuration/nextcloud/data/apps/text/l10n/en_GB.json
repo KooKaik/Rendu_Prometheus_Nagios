@@ -1,0 +1,9 @@
+{ "translations": {
+    "Text" : "Text",
+    "Unsaved changes" : "Unsaved changes",
+    "Bold" : "Bold",
+    "Italic" : "Italic",
+    "Edit" : "Edit",
+    "Undo" : "Undo"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
