@@ -154,6 +154,14 @@ scrape_configs:
 ```
 ![TargetNextCloudExporter](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/TargetNextCloudExporter.png)
 
+### 8 : Metrique NextCloud
+
+**Bande Passante**
+```
+(process_virtual_memory_bytes / process_virtual_memory_max_bytes)
+```
+![BandwidthNextCloud](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/BandwidthNextCloud.png)
+
 
 ### BONUS : Mise en place de la découverte automatique de vos conteneurs
 
