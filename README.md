@@ -57,7 +57,7 @@ prometheus:
       - hosts
 ```
 
-Ajout de node-exporter dans [prometheus.yml](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Fichier%20de%20Configuration/prometheus/prometheus.yml)
+**Ajout de node-exporter dans [prometheus.yml](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Fichier%20de%20Configuration/prometheus/prometheus.yml)**
 ```
 scrape_configs:
 
