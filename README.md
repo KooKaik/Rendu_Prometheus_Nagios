@@ -24,7 +24,7 @@ cd /usr/local/nagios/libexec/
 
 ```
 ./check_ping -H 192.168.116.129 -w 20,20% -c 30,30%
-PING OK -  
+PING OK -  Paquets perdus = 0%, RTA = 0.03 ms|rta=0.025000ms;20.000000;30.000000;0.000000 pl=0%;20;30;0
 ```
 
 ### 5 : check_ping sur https://duckduckgo.com avec Warning à 10ms et Critical à 20%
@@ -34,9 +34,11 @@ cd /usr/local/nagios/libexec/
 ```
 
 ```
-./check_ping -H duckduckgo.com -w 5,10% -c 20,30%
-
+./check_ping -H duckduckgo.com -w 10,10% -c 20,20%
+PING CRITICAL -  Paquets perdus = 100%|rta=20.000000ms;10.000000;20.000000;0.000000 pl=100%;10;20;0
 ```
+
+*NB : Pas possible à partir de n'importe nom de domaine*
 
 ### 6 : check_http sur le serveur Nagios
 
