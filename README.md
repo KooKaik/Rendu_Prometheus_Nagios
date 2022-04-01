@@ -131,6 +131,22 @@ NEXTCLOUD_MYSQL_PASSWORD=nextcloud_password
 
 ![WebInterfaceNextCloud](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/WebInterfaceNextCloud.png)
 
+### 7 : Mise en place de l'exporter NextCloud
+
+
+
+### BONUS : Mise en place de la découverte automatique de vos conteneurs
+
+**Ajout de sd_docker dans [prometheus.yml](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Fichier%20de%20Configuration/prometheus/prometheus.yml)**
+```
+scrape_configs:
+  - job_name: 'docker_sd'
+    docker_sd_configs:
+      - host: tcp://host.docker.internal:2375
+```
+![docker_sd](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/docker_sd.png)
+
+
 ## Nagios
 
 ### 1 & 2 : Installez Nagios et les plugins
