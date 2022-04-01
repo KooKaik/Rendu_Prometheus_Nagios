@@ -75,7 +75,7 @@ cfg_file=/usr/local/nagios/etc/objects/serveur_nagios.cfg
 
 ### BONUS : Superviser une VM Linux avec NRPE
 
-### Coté Client
+#### Coté Client
 
 Une VM clients linux a été mise en place pour ce TP (Ubuntu Server 20.04)
 
@@ -83,7 +83,7 @@ La procédure suivante a été suivi afin d'installer NRPE sur le client
 
 [Procédure NRPE](https://support.nagios.com/kb/article/nrpe-how-to-install-nrpe-v4-from-source-515.html)
 
-### Coté Serveur
+#### Coté Serveur
 
 - Création du fichier de configuration [linux-client.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/linux-client.cfg)
 
