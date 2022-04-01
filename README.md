@@ -97,6 +97,20 @@ Se rendre dans les paramètre du dashboard
 
 ![DashboardExample](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/DashboardExample.png)
 
+**Ajout d'une alarme**
+
+Se rendre sur un graphe et définir les seuils d'alertes
+
+![AlertCPU1](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/AlertCPU1.png)
+
+![AlertCPU2](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/AlertCPU2.png)
+
+*NB : Même procédure avec le seuil d'alerte pour le stockage*
+
+**Aperçu des alarmes**
+
+![AlertSummary](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/AlertSummary.png)
+
 ### 6 : Mettre en place un serveur de stockage NextCloud
 
 **Container MariaDB (Base de données)**
