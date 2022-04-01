@@ -14,7 +14,7 @@
 
 Nagios Core a été installé sur un serveur Ubuntu 20.04
 
-![Voir l'interface web](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/NagiosCore.png)
+[Voir l'interface web](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/NagiosCore.png)
 
 ### 4 : check_ping local avec Warning à 20ms et Critical à 30% :
 
@@ -70,6 +70,7 @@ cfg_file=/usr/local/nagios/etc/objects/serveur_nagios.cfg
 ```
 
 ### 8 : Vérifier le bon fonctionnement sur l'interface web
-
+![Hotes](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/Hosts.png)
+![Services](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/Services.png)
 
 ### BONUS : Superviser une VM Linux avec NRPE
