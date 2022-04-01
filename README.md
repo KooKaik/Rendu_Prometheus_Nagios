@@ -65,6 +65,7 @@ scrape_configs:
     static_configs: 
       - targets: ['node-exporter:9100']
 ```
+![TargetNodeExporter](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/TargetNodeExporter.png)
 
 ### 3 : Remonter les métrique du CPU et de l'espace disque utilisé
 
@@ -133,6 +134,25 @@ NEXTCLOUD_MYSQL_PASSWORD=nextcloud_password
 
 ### 7 : Mise en place de l'exporter NextCloud
 
+**Container nextcloud-exporter**
+```
+  nextcloud-exporter:
+    image: xperimental/nextcloud-exporter:latest
+    ports:
+      - 9205:9205
+    command: --server http://127.0.0.1:8080 --username admin --password password
+    networks:
+      - hosts
+```
+
+**Ajout de nextcloud-exporter dans [prometheus.yml](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Fichier%20de%20Configuration/prometheus/prometheus.yml)**
+```
+scrape_configs:
+  - job_name: 'nextcloud-exporter'
+    static_configs:
+      - targets: ['nextcloud-exporter:9205']
+```
+![TargetNextCloudExporter](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Prometheus/Capture%20Ecran/TargetNextCloudExporter.png)
 
 
 ### BONUS : Mise en place de la découverte automatique de vos conteneurs

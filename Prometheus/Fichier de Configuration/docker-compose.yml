@@ -65,5 +65,13 @@ services:
     networks:
       - hosts
 
+  nextcloud-exporter:
+    image: xperimental/nextcloud-exporter:latest
+    ports:
+      - 9205:9205
+    command: --server http://127.0.0.1:8080 --username admin --password password
+    networks:
+      - hosts
+
 networks:
   hosts:
