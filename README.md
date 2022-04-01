@@ -298,9 +298,9 @@ La procédure suivante a été suivi afin d'installer NRPE sur le client
 
 #### Coté Serveur
 
-**Création du fichier de configuration [linux-client.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/linux-client.cfg)**
+Création du fichier de configuration [linux-client.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/linux-client.cfg)
 
-**Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)**
+Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)
 
 ```
 cfg_file=/usr/local/nagios/etc/objects/linux-client.cfg
