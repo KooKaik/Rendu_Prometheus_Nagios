@@ -14,7 +14,7 @@
 
 Nagios Core a été installé sur un serveur Ubuntu 20.04
 
-![Voir l'interface web](https://github.com/KooKaik/Nagios/blob/master/Nagios/Capture%20Ecran/NagiosCore.png)
+![Voir l'interface web](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Capture%20Ecran/NagiosCore.png)
 
 ### 4 : check_ping local avec Warning à 20ms et Critical à 30% :
 
@@ -46,9 +46,9 @@ PING CRITICAL -  Paquets perdus = 100%|rta=20.000000ms;10.000000;20.000000;0.000
 
 ### 7 : Supervisez son serveur nagios en créant un fichier "serveur_nagios.cfg"
 
-- Création du fichier de configuration [serveur_nagios.cfg](https://github.com/KooKaik/Nagios/blob/master/Nagios/Fichiers%20de%20Congifuration/objects/serveur_nagios.cfg)
+- Création du fichier de configuration [serveur_nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/objects/serveur_nagios.cfg)
 
-- Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Nagios/blob/master/Nagios/Fichiers%20de%20Congifuration/nagios.cfg)
+- Déclaration du fichier dans [nagios.cfg](https://github.com/KooKaik/Rendu_Prometheus_Nagios/blob/master/Nagios/Fichiers%20de%20Configuration/nagios.cfg)
 ```
 cfg_file=/usr/local/nagios/etc/objects/serveur_nagios.cfg
 ```
